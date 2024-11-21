@@ -12,7 +12,7 @@ function App() {
   const[students,setstudents]=useState([])
   const fetchstudent=async()=>{
     try{
-        const response=await axios.get('http://127.0.0.1:8000/students/')
+        const response=await axios.get('https://student-api-pu5m.onrender.com/students')
         setstudents(response.data)
     }
     catch (error){
@@ -27,7 +27,7 @@ const onAdd=(newStudent)=>{
 
 const deleteStudent=async (id)=>{
 try{
-  const response=await axios.delete(`http://127.0.0.1:8000/student/${id}/delete`)
+  const response=await axios.delete(`https://student-api-pu5m.onrender.com/student/${id}/delete`)
   console.log(response)
   if(response.status==204)
     setstudents((students)=>students.filter((student)=>student.id !==id))
