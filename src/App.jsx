@@ -40,7 +40,7 @@ catch(error){
 
 const editStudent=async(id,updateStudent)=>{
   try{
-    const response=await axios.put(`http://127.0.0.1:8000/student/${id}/update`,updateStudent)
+    const response=await axios.put(`https://student-api-pu5m.onrender.com/student/${id}/update`,updateStudent)
     if(response.status==200){
       setstudents((students)=>students.map((student)=>student.id==id ? {...student, ...updateStudent}:student
     ))
